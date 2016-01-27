@@ -2,7 +2,6 @@ var restify = require('restify');
 var request = require('request');
 var crypto = require('crypto');
 
-
 var server = restify.createServer({
   name: 'docker-api',
   version: '1.0.0'
@@ -56,6 +55,7 @@ server.get('/api/v1/list', function (req, res, next) {
             //set content type to json for restify to work properly res = restify
             res.send(body);
         }
+        console.log(url);
     });
     return next();
 });
